@@ -15,7 +15,7 @@ namespace WebApiResource
             // Configure our parent container
             var container = UnityConfig.GetConfiguredContainer();
             
-            // Pass our parent container to httpConfiguration
+            // Pass our parent container to HttpConfiguration (Web API)
             var config = new HttpConfiguration {
                 DependencyResolver = new UnityDependencyResolver(container)
             };

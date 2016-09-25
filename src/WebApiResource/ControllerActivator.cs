@@ -16,7 +16,7 @@ namespace WebApiResource
         )
         {
             // Get container that we set to OwinContext using common key
-            var container = request.GetOwinContext().Get<IUnityContainer>("MyContainer");
+            var container = request.GetOwinContext().Get<IUnityContainer>(HttpApplicationKey.OwinPerRequestUnityContainerKey);
 
             // Resolve requested IHttpController using current container
             // prevent DefaultControllerActivator's behaviour of creating child containers 

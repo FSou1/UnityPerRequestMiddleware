@@ -19,7 +19,7 @@ namespace WebApiResource.Middleware
             var childContainer = _container.CreateChildContainer();
 
             // Set created container to owinContext (to become available at other places using OwinContext.Get<IUnityContainer>(key))
-            context.Set("MyContainer", childContainer);
+            context.Set(HttpApplicationKey.OwinPerRequestUnityContainerKey, childContainer);
 
             await _next.Invoke(context);
 

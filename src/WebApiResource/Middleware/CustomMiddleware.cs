@@ -16,7 +16,7 @@ namespace WebApiResource.Middleware
         public override async Task Invoke(IOwinContext context)
         {
             // Get container that we set to OwinContext using common key
-            var container = context.Get<IUnityContainer>("MyContainer");
+            var container = context.Get<IUnityContainer>(HttpApplicationKey.OwinPerRequestUnityContainerKey);
 
             // Resolve registered services
             var sameInARequest = container.Resolve<SameInARequest>();
